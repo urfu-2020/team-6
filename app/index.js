@@ -1,10 +1,15 @@
 const express = require('express');
-const index = express();
-const port = 80;
-index.get('/', (request, response) => {
+const app = express();
+const port =  process.env.PORT || 80;
+app.get('/', (request, response) => {
   response.send('Hello from Express!');
 });
-index.listen(port, (err) => {
+app.get('/file', (request, response) => {
+  response.sendFile(__dirname + "/index.html");
+});
+
+
+app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err);
   }
