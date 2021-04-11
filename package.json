@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "path": "^0.12.7",
     "surge": "^0.23.0"
   },
   "devDependencies": {
@@ -21,7 +23,7 @@
   "scripts": {
     "test": "npm run lint",
     "lint": "stylelint app/**/*.css && eslint app/",
-	"fix": "stylelint --fix app/**/*.css && eslint --fix app/",
+    "fix": "stylelint --fix app/**/*.css && eslint --fix app/",
     "start": "node app/index.js"
   }
 }
