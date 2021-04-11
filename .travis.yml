@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - 14
+env:
+  - PROJECT_ENV=$PROJECT_ENV
 install:
   - npm install
 before_script:
