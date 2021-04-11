@@ -1,3 +1,7 @@
 language: node_js
 node_js:
   - 14
+deploy:
+  provider: surge
+  project: ./app/public/
+  domain: projectkilogram.surge.sh
