@@ -1,13 +1,16 @@
 language: node_js
 node_js:
-  - 14
+  - 15
+env:
+  - PUBLIC_URL="https://projectkilogram.surge.sh/"
 install:
   - npm install
-before_script:
-  - npm run lint
+script:
+  - npm test
+  - npm run build
 deploy:
   - provider: surge
-    project: ./app/public/
+    project: ./build
     domain: projectkilogram.surge.sh
     skip_cleanup: trues
   - provider: heroku
