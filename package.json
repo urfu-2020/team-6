@@ -19,8 +19,8 @@
     "stylelint-config-standard": "^21.0.0"
   },
   "scripts": {
-    "test": "npm run check",
-    "check": "stylelint app/**/*.css && eslint app/",
+    "test": "npm run lint",
+    "lint": "stylelint app/**/*.css && eslint app/",
 	"fix": "stylelint --fix app/**/*.css && eslint --fix app/",
     "start": "node app/index.js"
   }
