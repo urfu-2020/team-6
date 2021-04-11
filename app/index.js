@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 80;
-const environment = process.env.NODE_ENV || 'DEVELOPMENT';
+const environment = process.env.PROJECT_ENV || 'DEVELOPMENT';
 const viewsDir = path.join(__dirname, 'views');
 const staticBasePath = environment === 'PRODUCTION' ? 'https://projectkilogram.surge.sh/' : '';
 
