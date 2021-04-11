@@ -5,3 +5,4 @@ deploy:
   provider: surge
   project: ./app/public/
   domain: projectkilogram.surge.sh
+  skip_cleanup: trues
