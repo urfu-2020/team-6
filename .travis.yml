@@ -11,6 +11,8 @@ deploy:
     domain: projectkilogram.surge.sh
     skip_cleanup: trues
   - provider: heroku
-    app: projectkilogram
+    app:
+      master: projectkilogram
+      development: projectkilogramdev
     api_key:
       secure: DY0QYL/p16N0XrmjLY9SiNk5zhd8OM/V6FL5H26hpofltnLWQ/Da+cvQLeJENN8ojR2qiIBd7aSdLLUsjxf/QmsMxDghxBDlW1/i4ydBGs8sdcDuLa942uTmJvwkNy9cJgaVxxFATBtWELoyDz4t7z5g0R6DPysR9+15+gl03k0Rd1iPOPl5MaaQjXlSa5mvqVhtUcmPkOuNSiWONc2wrtKej54bCkdRM4/+f73Fq3O0cAKarjBlodtc1Vn1P1ufkfBYSn5XqJAuQLyvkwCEPdW3wlq762aubzG9Xhco2k7Ce9VBtzLutZlCfyWEeNYlvP66MJ0Fw0W6NYQNIKTH7oYGA2+QaSwActri0aSHoUxpGGqm/bbW25kK/77v60/gBw0Yzq2e/+sxjcKC5KhNzrHZL2vjLFXT/8e1aHJSYW4B3NjSwMEjQBEbkH+22M0ZjAZTSkiROP/yMWWDhG30XHdi9KaPjpxhbarcfYQzH7G/XuFKqY3TEC7jY9xwOo2yzt1Wou1y37uHNA6F277vAVDhvlCJ/CU2lucPPt6bwAHAjPMT+j3BQVzDquOil5W0CKugnewXbOuk8j7kzK+J05u3sOQcCX5lLda7EbQ0XDLE3fber8cK0FhKv/IDznWBFNrfWSdOdo5EpAp+wpAFzjU6QaZNqL4/81LTqhFnWis=
