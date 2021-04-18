@@ -18,7 +18,9 @@ app.get('/', (request, response) => {
 app.get('/file', (request, response) => {
   response.render('index', {staticBasePath});
 });
-
+app.get('/chatspreview', (request, response) => {
+  response.render('chatsList', {staticBasePath})
+});
 
 if (environment === 'DEVELOPMENT') {
   app.use(express.static('app/public'));
