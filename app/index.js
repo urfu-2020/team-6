@@ -19,7 +19,7 @@ app.get('/file', (request, response) => {
   response.render('index', {staticBasePath});
 });
 app.get('/chatspreview', (request, response) => {
-  response.render('chatsList', {staticBasePath})
+  response.render('chatsList', {staticBasePath});
 });
 
 if (environment === 'DEVELOPMENT') {
