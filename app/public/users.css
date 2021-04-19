@@ -1,0 +1,92 @@
+body {
+  background-color: grey;
+  margin: 0;
+  display: flex;
+}
+
+.users_block {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: auto;
+  width: 400px;
+  background-color: #16222e;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.add_contact {
+  color: #009ae1;
+  margin-left: 0px;
+}
+
+.user_item {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+
+.user_photo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.user_add {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin: auto 0 auto 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.user_image {
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin: auto 0 auto 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* background-color: green; */
+}
+
+.user_parameter {
+  display: flex;
+  flex-direction: row;
+}
+.info_block {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -25px;
+}
+
+.user_name {
+  color: white;
+  font-weight: bold;
+}
+
+.user_info {
+  list-style-type: none;
+}
+
+.user_online {
+  color: #009ae1;
+  font-size: 14;
+}
+
+.user_offline {
+  font-size: 14;
+  color: #a0b4c6;
+}
+
+.divider {
+  margin-bottom: 0;
+  height: 1px;
+  width: inherit;
+  margin-left: 65px;
+  background-color: #1e2f41;
+  border: none;
+}
