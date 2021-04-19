@@ -2,7 +2,7 @@
   grid-area: chat-message-list;
   display: flex;
   flex-direction: column-reverse;
-  padding: 0 20p
+  padding: 0 20px;
   overflow-y: scroll;
 }
 
@@ -30,7 +30,7 @@
 
 .other-message .message-content {
   grid-template-columns: 48px 1fr;
-  gird-column-gap: 15px;
+  grid-column-gap: 15px;
 }
 
 .message-row img {
