@@ -1,0 +1,19 @@
+.messenger {
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  height: 500px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-form {
+  justify-content: center;
+}
+
+.chatsList {
+  width: 30%;
+}

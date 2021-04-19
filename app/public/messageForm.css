@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   height: 80px;
-  background: dimgrey;
-  width: 595px;
+  background: #17212b;
 }
 
 .message-form__text {
@@ -13,7 +12,6 @@
   box-sizing: border-box;
   border-radius: 20px;
   padding: 10px;
-  width: 500px;
   resize: none;
   height: 65px;
 }
