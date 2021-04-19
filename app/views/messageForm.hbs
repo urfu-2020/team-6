@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="{{ staticBasePath }}messageForm.css">
+</head>
+<body>
+<form class="message-form">
+    <button type="button" class="message-form__clip-button"><img src="{{ staticBasePath }}icons/clip.svg"
+                                                                 alt="картинка скрепки">
+    </button>
+    <label for="messageText">
+        <textarea class="message-form__text" id="messageText"
+                  placeholder="Message..." cols="45"></textarea>
+    </label>
+    <button type="submit" class="message-form__submit-button">
+        <img src="{{ staticBasePath }}icons/right-arrow.svg" alt="картинка со стрелочкой" width="35">
+    </button>
+</form>
+</body>
+</html>

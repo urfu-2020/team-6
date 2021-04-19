@@ -1,0 +1,27 @@
+.message-form {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: dimgrey;
+  width: 595px;
+}
+
+.message-form__text {
+  background: #202020;
+  border: 1px solid #000;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 10px;
+  width: 500px;
+  resize: none;
+  height: 65px;
+}
+
+.message-form__clip-button,
+.message-form__submit-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
