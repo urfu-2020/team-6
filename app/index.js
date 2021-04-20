@@ -19,8 +19,9 @@ app.get('/', (request, response) => {
 app.get('/file', (request, response) => {
   response.render('index', {staticBasePath});
 });
-app.get('/chatspreview', (request, response) => {
-  response.render('chatsList', {staticBasePath});
+
+app.get('/chat', (request, response) => {
+  response.render('chat', {staticBasePath});
 });
 
 if (environment === 'DEVELOPMENT') {
