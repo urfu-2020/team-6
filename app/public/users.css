@@ -9,7 +9,6 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: auto;
   width: 400px;
   background-color: #16222e;
   overflow: hidden;
@@ -18,7 +17,7 @@ body {
 
 .add_contact {
   color: #009ae1;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .user_item {
@@ -35,8 +34,6 @@ body {
 }
 
 .user_add {
-  margin-top: auto;
-  margin-bottom: auto;
   margin: auto 0 auto 10px;
   width: 40px;
   height: 40px;
@@ -44,19 +41,17 @@ body {
 
 .user_image {
   overflow: hidden;
-  margin-top: auto;
-  margin-bottom: auto;
   margin: auto 0 auto 10px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  /* background-color: green; */
 }
 
 .user_parameter {
   display: flex;
   flex-direction: row;
 }
+
 .info_block {
   margin-top: auto;
   margin-bottom: auto;
