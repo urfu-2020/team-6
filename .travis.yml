@@ -2,9 +2,8 @@ language: node_js
 node_js:
   - 14
 install:
-  - npm install
-before_script:
-  - npm run lint
+  - npm install client
+  - npm install server
 deploy:
   - provider: surge
     project: ./app/public/

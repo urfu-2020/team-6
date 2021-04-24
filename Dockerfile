@@ -1,8 +1,8 @@
 FROM node
 # Копируем всё что нужно из локальной папки в образ
 
-COPY app /app
-COPY package-lock.json /
+COPY client /client
+COPY server /server
 COPY package.json /
 
 # Устанавливаем зависимости, в образе появится /node_modules
@@ -11,4 +11,4 @@ RUN npm ci --production
 EXPOSE $PORT
 
 # При старте контейнер выполнит эту команду – запустит наше приложение
-CMD node app/index.js
+CMD node server/index.js
