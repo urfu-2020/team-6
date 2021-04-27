@@ -1,5 +1,6 @@
 FROM node
 # Копируем всё что нужно из локальной папки в образ
+WORKDIR /usr/app
 
 COPY client /client
 COPY server /server
