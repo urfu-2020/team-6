@@ -1,0 +1,10 @@
+.users_block {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 400px;
+    background-color: #16222e;
+    overflow: hidden;
+    border-radius: 15px;
+}

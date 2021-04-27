@@ -1,6 +1,7 @@
-{ 
+{
 	"scripts": {
 		"test": "echo hi",
-		"start": "node server/index.js"
-		}
+		"start": "cd server && npm run start",
+		"build": "cd server && npm install && cd ../client && npm install && npm run build"
+	}
 }
