@@ -4,6 +4,7 @@ FROM node
 COPY client /client
 COPY server /server
 COPY package.json /
+COPY package-lock.json /
 
 RUN npm ci --production
 
