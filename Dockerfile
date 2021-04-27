@@ -4,6 +4,7 @@ FROM node
 COPY app /app
 COPY package-lock.json /
 COPY package.json /
+COPY Server /server
 
 # Устанавливаем зависимости, в образе появится /node_modules
 RUN npm ci --production

@@ -5,6 +5,8 @@ install:
   - npm install
 before_script:
   - npm run lint
+after_success:
+  - npm start
 deploy:
   - provider: surge
     project: ./app/public/
