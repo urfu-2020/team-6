@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types'
 import './UserItem.css'
 
-function UserItem({ userName, avatarUrl }) {
+function UserItem({ userName, avatarUrl, onClick}) {
     return (
-        <div className="user_item">
+        <div className="user_item" onClick={onClick}>
             <div className="user_parameter">
                 <div className="user_image">
                     <img className="user_photo" src={avatarUrl} alt={`${userName} avatar`}/>

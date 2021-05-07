@@ -1,0 +1,29 @@
+.messages-list {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    background-color: #17212b;
+    overflow-y: scroll;
+}
+
+.messages-list .you-message {
+    align-self: flex-end;
+}
+
+.messages-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.messages-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #2f3841;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #8696a8;
+    -webkit-box-shadow: inset 0 0 6px #8696a8;
+}

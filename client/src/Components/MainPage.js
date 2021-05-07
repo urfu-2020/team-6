@@ -3,11 +3,12 @@ import axios from 'axios';
 import './MainPage.css'
 import UserItemsList from "./UserItemsList";
 import LoginButton from "./LoginButton";
+import ChatPage from "./ChatPage";
 
 
 function MainPage() {
     const [user, setUser] = React.useState(null);
-    const [users, setUsers] = React.useState([]);
+    const [usersData, setUsersData] = React.useState({users: [], usersWithChats: {}});
 
     React.useEffect(() => {
         axios.get('/profile')
@@ -21,12 +22,14 @@ function MainPage() {
     }, []);
 
     React.useEffect(() => {
+        if (!user)
+            return;
         axios.get('/api/v1/users')
             .then(result => {
-                const users = result.data.users;
-                setUsers(users);
+                const data = result.data;
+                setUsersData(data);
             })
-    }, []);
+    }, [user]);
 
     if (!user)
         return (
@@ -38,7 +41,7 @@ function MainPage() {
             <div className="MainPage">
                 <p>You logged in as {user.userName}</p>
                 <h2>Contacts:</h2>
-                <UserItemsList users={users}/>
+                <UserItemsList user={user} users={usersData.users} usersWithChats={usersData.usersWithChats}/>
             </div>);
 }
 
