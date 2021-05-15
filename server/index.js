@@ -10,6 +10,7 @@ const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
 const bodyParser = require('body-parser');
 const {Op} = require("sequelize");
+const ws = require("ws");
 
 
 const sequelize = new Sequelize(process.env.DATABASE_CONNECTION_URL);
@@ -222,7 +223,7 @@ app.post(
 
             return res.json({id: chat.id});
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 );
@@ -289,13 +290,13 @@ app.get(
                 text: message.text,
                 date: message.date,
                 avatarUrl: message.user.avatarUrl
-            }
+            };
         });
-        return res.json({messages: result})
+        return res.json({messages: result});
     }
 );
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });
 
@@ -303,6 +304,35 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
+const wsServer = new ws.Server({noServer: true});
+wsServer.on('connection', (socket, req) => {
+    // socket.on('message', message => console.log(message, req));
+    setTimeout(
+        () => socket.send(JSON.stringify({id: 1, text: '1', isYou: false, avatarUrl: '', date: '2021-05-09'})),
+        1000);
+    setTimeout(
+        () => socket.send(JSON.stringify({id: 2, text: '2', isYou: false, avatarUrl: '', date: '2021-05-09'})),
+        2000);
+    setTimeout(
+        () => socket.send(JSON.stringify({id: 3, text: '3', isYou: false, avatarUrl: '', date: '2021-05-09'})),
+        3000);
+    setTimeout(
+        () => socket.send(JSON.stringify({id: 4, text: '4', isYou: false, avatarUrl: '', date: '2021-05-09'})),
+        4000);
+    setTimeout(
+        () => socket.send(JSON.stringify({id: 5, text: '5', isYou: false, avatarUrl: '', date: '2021-05-09'})),
+        5000);
+});
+
+wsServer.on('message', (socket) => {
+    
+})
+
+server.on('upgrade', (request, socket, head) => {
+    wsServer.handleUpgrade(request, socket, head, socket => {
+        wsServer.emit('connection', socket, request);
+    });
+});
 
 //ChatMessageModel.sync({force: true});
 //sequelize.sync();
