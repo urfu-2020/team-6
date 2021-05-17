@@ -14,12 +14,18 @@
     padding: 10px;
     resize: none;
     height: 65px;
+    width: 93vw;
 }
 
 .message-form__clip-button,
 .message-form__submit-button {
     cursor: pointer;
     background-color: transparent;
+}
+
+.message-form__clip-button,
+.message-form__submit-button,
+.message-form__text {
     border: none;
     outline: none;
 }

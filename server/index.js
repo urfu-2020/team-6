@@ -161,6 +161,7 @@ app.get(
     }
 );
 
+
 app.get(
     '/api/v1/users',
     async (req, res) => {
@@ -327,6 +328,66 @@ wsServer.on('connection', (socket, req) => {
 wsServer.on('message', (socket) => {
     
 })
+
+server.on('upgrade', (request, socket, head) => {
+    wsServer.handleUpgrade(request, socket, head, socket => {
+        wsServer.emit('connection', socket, request);
+    });
+});
+
+const connections = {};
+
+const wsServer = new ws.Server({noServer: true});
+
+wsServer.on('connection', (socket, req) => {
+    const userId = parseInt(req.url.substr(1), 10);
+    connections[userId] = socket;
+
+
+    socket.on('message', function incoming(message) {
+        const data = JSON.parse(message);
+
+        if (data.type === 'sendMessage')
+            handleSendMessageEventAsync(data);
+    });
+});
+
+
+async function handleSendMessageEventAsync(data) {
+
+    const userId = data.userId;
+    const text = data.text;
+    const date = Date.parse(data.date);
+
+    const chatId = data.chatId;
+    try {
+        const message = await ChatMessageModel.create({
+            text: text,
+            chatRoomId: chatId,
+            userId: userId,
+            date: date
+        });
+
+        const chat = await ChatRoomModel.findOne({
+            where: {
+                id: chatId
+            },
+            include: [{
+                model: UserModel
+            }]
+        });
+
+        for (let user of chat.users) {
+            if (user.id in connections) {
+                const connection = connections[user.id];
+                connection.send(JSON.stringify(message));
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 
 server.on('upgrade', (request, socket, head) => {
     wsServer.handleUpgrade(request, socket, head, socket => {
