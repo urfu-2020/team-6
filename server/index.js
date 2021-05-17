@@ -13,6 +13,7 @@ const {Op} = require("sequelize");
 const ws = require("ws");
 
 
+
 const sequelize = new Sequelize(process.env.DATABASE_CONNECTION_URL);
 sequelize
     .authenticate()
@@ -349,7 +350,15 @@ async function handleSendMessageEventAsync(data) {
         for (let user of chat.users) {
             if (user.id in connections) {
                 const connection = connections[user.id];
-                connection.send(JSON.stringify(message))
+                const newMessage = {
+                    isYou: message.userId === user.id,
+                    avatarUrl: user.avatarUrl,
+                    text: message.text,
+                    chatRoomId: message.chatId,
+                    userId: message.userId,
+                    date: message.date
+                };
+                connection.send(JSON.stringify(newMessage))
             }
         }
     } catch (e) {
