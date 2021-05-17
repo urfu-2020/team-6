@@ -2,9 +2,9 @@ import React, {useEffect, useRef} from "react";
 import './ChatPage.css'
 import MessageForm from "./MessageForm";
 import MessagesList from "./MessagesList";
-import Header from "./Header";
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import Header from "./Header";
 
 
 function ChatPage() {
@@ -23,7 +23,7 @@ function ChatPage() {
 
     if (user && !savedSocket.current) {
         const userId = user.id;
-        savedSocket.current = new WebSocket(`ws://localhost:3001/${userId}`);
+        savedSocket.current = new WebSocket(`${ process.env.REACT_APP_WEB_SOCKET_ADDRESS}/${userId}`);
         savedSocket.current.bufferType = "arraybuffer";
         savedSocket.current.onmessage = (event) => {
             const message = JSON.parse(event.data);
