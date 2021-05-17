@@ -1,0 +1,14 @@
+.backDoor {
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.header {
+    background: #17212b;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
