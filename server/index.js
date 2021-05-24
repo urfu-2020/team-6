@@ -10,6 +10,8 @@ const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
 const bodyParser = require('body-parser');
 const {Op} = require("sequelize");
+const ws = require("ws");
+
 
 
 const sequelize = new Sequelize(process.env.DATABASE_CONNECTION_URL);
@@ -159,7 +161,6 @@ app.get(
             .then(user => res.json(user));
     }
 );
-
 app.get(
     '/api/v1/users',
     async (req, res) => {
@@ -222,7 +223,7 @@ app.post(
 
             return res.json({id: chat.id});
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 );
@@ -289,13 +290,13 @@ app.get(
                 text: message.text,
                 date: message.date,
                 avatarUrl: message.user.avatarUrl
-            }
+            };
         });
-        return res.json({messages: result})
+        return res.json({messages: result});
     }
 );
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });
 
@@ -303,6 +304,74 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
+
+const connections = {};
+
+const wsServer = new ws.Server({noServer: true});
+
+wsServer.on('connection', (socket, req) => {
+    const userId = parseInt(req.url.substr(1), 10);
+    connections[userId] = socket;
+
+
+    socket.on('message', function incoming(message) {
+        const data = JSON.parse(message);
+
+        if (data.type === 'sendMessage')
+            handleSendMessageEventAsync(data)
+    });
+});
+
+
+async function handleSendMessageEventAsync(data) {
+
+    const userId = data.userId;
+    const text = data.text;
+    const date = Date.parse(data.date);
+
+    const chatId = data.chatId;
+    try {
+        const message = await ChatMessageModel.create({
+            text: text,
+            chatRoomId: chatId,
+            userId: userId,
+            date: date
+        });
+
+        const chat = await ChatRoomModel.findOne({
+            where: {
+                id: chatId
+            },
+            include: [{
+                model: UserModel
+            }]
+        });
+
+        for (let user of chat.users) {
+            if (user.id in connections) {
+                const connection = connections[user.id];
+                const newMessage = {
+                    isYou: message.userId === user.id,
+                    avatarUrl: user.avatarUrl,
+                    text: message.text,
+                    chatRoomId: message.chatId,
+                    userId: message.userId,
+                    date: message.date
+                };
+                connection.send(JSON.stringify(newMessage))
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+server.on('upgrade', (request, socket, head) => {
+    wsServer.handleUpgrade(request, socket, head, socket => {
+        wsServer.emit('connection', socket, request);
+    });
+});
 
 //ChatMessageModel.sync({force: true});
 //sequelize.sync();
