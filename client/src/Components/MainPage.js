@@ -14,12 +14,10 @@ function MainPage() {
         let divider = Array.from(document.getElementsByClassName('divider'));
         if (checked.checked === true) {
             users.style.backgroundColor = '#9bb5d2';
-            divider.forEach(elem => elem.style.backgroundColor = '#7a97b5')
-        }
-        else
-        {
+            divider.forEach(elem => elem.style.backgroundColor = '#7a97b5');
+        } else {
             users.style.backgroundColor = '#16222e';
-            divider.forEach(elem => elem.style.backgroundColor = '#1e2f41')
+            divider.forEach(elem => elem.style.backgroundColor = '#1e2f41');
         }
     }
 
@@ -46,9 +44,12 @@ function MainPage() {
 
     if (!user)
         return (
-            <div className="MainPage">
-                <LoginButton/>
-            </div>);
+            <div className={'wrapper'}>
+                <div className="MainPage">
+                    <LoginButton/>
+                </div>
+            </div>
+        );
     else
         return (
             <div className={'wrapper'}>
