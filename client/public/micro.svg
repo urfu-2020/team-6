@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="15mm"
+   height="30mm"
+   viewBox="0 0 15 30"
+   version="1.1"
+   id="svg1573"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="Microphone.svg">
+  <defs
+     id="defs1567" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="223.58673"
+     inkscape:cy="215.95573"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     width="25mm"
+     inkscape:window-width="1920"
+     inkscape:window-height="1139"
+     inkscape:window-x="1024"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1570">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-267)">
+    <rect
+       style="opacity:0.97000002;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.83998829;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect3232"
+       width="7.7750688"
+       height="16.929356"
+       x="3.9398417"
+       y="269.20609"
+       ry="3.2555687" />
+    <path
+       style="opacity:0.97000002;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0379132;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 13.348958,278.82416 c 0,3.17141 -0.01448,6.1019 -1.722879,7.68761 -1.7083838,1.5857 -5.8890256,1.5857 -7.59741,0 -1.7083844,-1.58571 -1.7228789,-4.5162 -1.7228789,-7.68761"
+       id="path3234"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.0379132;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 7.8273742,287.70104 v 4.66893"
+       id="path3253"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0379132;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path3258"
+       sodipodi:type="arc"
+       sodipodi:cx="7.8273764"
+       sodipodi:cy="-295.88953"
+       sodipodi:rx="5.6947436"
+       sodipodi:ry="3.5195448"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       d="m 13.52212,-295.88953 a 5.6947436,3.5195448 0 0 1 -2.847372,3.04802 5.6947436,3.5195448 0 0 1 -5.6947436,0 5.6947436,3.5195448 0 0 1 -2.8473717,-3.04802"
+       sodipodi:open="true"
+       transform="scale(1,-1)" />
+  </g>
+</svg>

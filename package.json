@@ -3,5 +3,9 @@
 		"test": "echo hi",
 		"start": "cd server && npm run start",
 		"build": "cd server && npm install && cd ../client && npm install && npm run build"
+	},
+	"dependencies": {
+		"emoji-picker-react": "^3.4.7",
+		"react-click-outside": "^3.0.1"
 	}
 }
