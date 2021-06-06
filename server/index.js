@@ -13,7 +13,6 @@ const {Op} = require("sequelize");
 const ws = require("ws");
 
 
-
 const sequelize = new Sequelize(process.env.DATABASE_CONNECTION_URL);
 sequelize
     .authenticate()
@@ -240,7 +239,6 @@ app.post('/api/v1/chats/:id/messages',
 
         const text = req.body['text'];
         const date = Date.parse(req.body['date']);
-
         const chatId = req.params.id;
         try {
             const message = await ChatMessageModel.create({
@@ -328,7 +326,6 @@ async function handleSendMessageEventAsync(data) {
     const userId = data.userId;
     const text = data.text;
     const date = Date.parse(data.date);
-
     const chatId = data.chatId;
     try {
         const message = await ChatMessageModel.create({

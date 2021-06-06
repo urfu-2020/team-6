@@ -24,7 +24,6 @@ const userClickHandle = (loggedInUser, userOnClick, usersWithChats, history) => 
 
 function UserItemsList({user, users, usersWithChats}) {
     const history = useHistory();
-
     return (
         <div className="users_block">
             {users.map((u, _) => {
