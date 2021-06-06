@@ -1,8 +1,14 @@
+.form-wrapper {
+    max-height: 80px;
+}
+
 .message-form {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 80px;
     background: #17212b;
+    width: 100%;
 }
 
 .message-form__text {
@@ -14,18 +20,28 @@
     padding: 10px;
     resize: none;
     height: 65px;
-    width: 93vw;
+    width: 65vw;
+    font-size: 25px;
 }
 
 .message-form__clip-button,
-.message-form__submit-button {
+.message-form__submit-button,
+.message-form__audiomessage,
+.message-form__emoji {
     cursor: pointer;
     background-color: transparent;
 }
 
 .message-form__clip-button,
 .message-form__submit-button,
-.message-form__text {
+.message-form__text,
+.message-form__audiomessage,
+.message-form__emoji {
     border: none;
     outline: none;
 }
+
+.emojiWrapper {
+    position: relative;
+}
+

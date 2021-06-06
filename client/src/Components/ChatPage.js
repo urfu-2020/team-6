@@ -6,7 +6,6 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
 
-
 function ChatPage() {
     const {id} = useParams();
 
